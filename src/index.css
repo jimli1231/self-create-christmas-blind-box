@@ -1,0 +1,30 @@
+:root {
+    --primary-red: #D42426;
+    --primary-green: #146B3A;
+    --gold: #FFD700;
+    --snow-white: #F8F9FA;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    /* More rounded/modern font */
+    background-color: #f0f0f0;
+    overflow: hidden;
+    /* Prevent scrolling */
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
