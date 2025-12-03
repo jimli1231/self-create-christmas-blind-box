@@ -5,18 +5,22 @@ import CharacterCard from './components/CharacterCard';
 import './App.css';
 
 // Asset paths
-const BG_IMAGE = '/assets/bg_christmas.png';
+const getAssetPath = (path: string) => {
+  return import.meta.env.BASE_URL + path.replace(/^\//, '');
+};
+
+const BG_IMAGE = getAssetPath('/assets/bg_christmas.png');
 const CHARACTERS = [
-  { id: 'molly', name: 'Molly', image: '/assets/char_molly.png', desc: 'The pouting painter!' },
-  { id: 'dimoo', name: 'Dimoo', image: '/assets/char_dimoo.png', desc: 'Dreaming in the clouds.' },
-  { id: 'labubu', name: 'Labubu', image: '/assets/char_labubu.png', desc: 'Mischievous but cute!' },
-  { id: 'skullpanda', name: 'Skullpanda', image: '/assets/char_skullpanda.png', desc: 'Cool and futuristic style.' },
+  { id: 'molly', name: 'Molly', image: getAssetPath('/assets/char_molly.png'), desc: 'The pouting painter!' },
+  { id: 'dimoo', name: 'Dimoo', image: getAssetPath('/assets/char_dimoo.png'), desc: 'Dreaming in the clouds.' },
+  { id: 'labubu', name: 'Labubu', image: getAssetPath('/assets/char_labubu.png'), desc: 'Mischievous but cute!' },
+  { id: 'skullpanda', name: 'Skullpanda', image: getAssetPath('/assets/char_skullpanda.png'), desc: 'Cool and futuristic style.' },
 ];
 
 // Audio paths
-const BGM_PATH = '/assets/music/background.mp3';
-const CLICK_SFX_PATH = '/assets/music/button_click.wav';
-const REVEAL_SFX_PATH = '/assets/music/character_reveal.wav';
+const BGM_PATH = getAssetPath('/assets/music/background.mp3');
+const CLICK_SFX_PATH = getAssetPath('/assets/music/button_click.wav');
+const REVEAL_SFX_PATH = getAssetPath('/assets/music/character_reveal.wav');
 
 function App() {
   const [stage, setStage] = useState<'intro' | 'unboxing' | 'revealed'>('intro');

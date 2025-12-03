@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './BlindBox.css';
 
-const BOX_IMAGE = '/assets/box_closed.png';
+const getAssetPath = (path: string) => {
+    return import.meta.env.BASE_URL + path.replace(/^\//, '');
+};
+
+const BOX_IMAGE = getAssetPath('/assets/box_closed.png');
 
 interface BlindBoxProps {
     onOpen: () => void;
 }
 
-const SHAKE_SFX_PATH = '/assets/music/shaking_box.wav';
+const SHAKE_SFX_PATH = getAssetPath('/assets/music/shaking_box.wav');
 
 const BlindBox: React.FC<BlindBoxProps> = ({ onOpen }) => {
     const [isShaking, setIsShaking] = useState(false);
